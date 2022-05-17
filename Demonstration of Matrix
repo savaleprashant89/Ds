@@ -1,0 +1,169 @@
+#include<iostream.h>
+#include<conio.h>
+
+class matrix
+{
+	int a[5][5],b[5][5],c[5][5],d[5][5],e[5][5],f[5][5];
+	int p,q,i,j,k,n,m;
+
+	public:
+		void get();
+		void add();
+		void sub();
+		void trans();
+		void mul();
+
+};
+
+void matrix::get()
+{
+	cout<<"\nEnter Number of Row & Column :\t";
+	cin>>n>>m;
+
+	cout<<"\nEnter the first Matrix:\n";
+
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		cin>>a[i][j];
+	}
+	cout<<"\nEnter Number of Row & Column :\t";
+	cin>>p>>q;
+
+	cout<<"\nEnter the first Matrix:\n";
+
+	for(i=0;i<p;i++)
+	{
+		for(j=0;j<q;j++)
+		cin>>b[i][j];
+	}
+}
+
+void matrix::add()
+{
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			c[i][j]=a[i][j]+b[i][j];
+		}
+	}
+	cout<<"\nThe addition of two matrix is :\n";
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		       cout<<c[i][j]<<"\t";
+		       cout<<"\n";
+		}
+}
+
+void matrix::sub()
+{
+		for(i=0;i<n;i++)
+		{
+			for(j=0;j<m;j++)
+			{
+			d[i][j]=a[i][j]-b[i][j];
+			}
+
+		}
+	cout<<"\nThe Substraction of two matrix is :\n";
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		       cout<<d[i][j]<<"\t";
+		       cout<<"\n";
+
+	}
+}
+
+void matrix::trans()
+{
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+			e[i][j]=a[j][i];
+		}
+	}
+	cout<<"\nThe Transpose of first matrix is :\n";
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+			cout<<e[i][j]<<"\t";
+			cout<<"\n";
+	}
+}
+
+void matrix::mul()
+{
+	if(m==p)
+	{
+	 for(i=0;i<n;i++)
+	 {
+		for(j=0;j<q;j++)
+		{ c[i][j]=0;
+		for(k=0;k<p;k++)
+			c[i][j]=c[i][j]+a[i][k]*b[k][j];
+		}
+	 }
+
+	cout<<"\nThe Matrix Multiplication is : \n";
+	for(i=0;i<n;i++)
+	 {
+		for(j=0;j<m;j++)
+		cout<<c[i][j]<<"\t";
+		cout<<"\n";
+	 }
+	}
+	else
+	cout<<"\n Matrix Multiplication not possible";
+}
+
+void main()
+{
+	clrscr();
+	matrix m;
+	m.get();
+	m.add();
+	m.sub();
+	m.trans();
+	m.mul();
+	getch();
+}
+
+*/ Output */
+
+Enter Number of Row & Column :  3 3
+
+Enter the first Matrix:
+1 2 3
+4 5 6
+7 8 9
+
+Enter Number of Row & Column :  3 3
+
+Enter the first Matrix:
+1 2 3
+4 5 6
+7 8 9
+
+The addition of two matrix is :
+2       4       6
+8       10      12
+14      16      18
+
+The Substraction of two matrix is :
+0       0       0
+0       0       0
+0       0       0
+
+The Transpose of first matrix is :
+1       4       7
+2       5       8
+3       6       9
+
+The Matrix Multiplication is :
+30      36      42
+66      81      96
+102     126     150
