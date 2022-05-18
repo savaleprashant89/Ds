@@ -1,0 +1,41 @@
+#include<iostream.h>
+#include<conio.h>
+class factorial
+{
+	double n,f;
+	public:
+	void get();
+	double fact(double);
+};
+
+void factorial::get()
+{
+	cout<<"\nEnter n";
+	cin>>n;
+	f=fact(n);
+	cout<<"\n Factorial of "<<n<<" is "<< f;
+}
+
+double factorial::fact(double n)
+{
+	if(n==0)
+	 return 1;
+	else
+	 return(n*fact(n-1));
+}
+
+void main()
+{
+	clrscr();
+	factorial f;
+	f.get();
+	getch();
+}
+
+
+*/ Output */
+
+Enter n 34
+
+Factorial of 34 is 2.952328e+38
+
